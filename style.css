@@ -1,64 +1,33 @@
-header#q44 {
+header {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #dddddd;
+    float: right;
+    order: -1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-header#q44 img {
-    float: left;
-    margin: 10px;
-    width: 100px;
-    height: 100px;
-}
+    header img {
+        float: left;
+        margin: 10px;
+    }
 
-nav.menu p {
-    max-width: 960px;
-    background-color: #ccc;
-    margin: 20px auto 0;
-    padding: 10px;
-}
+    header h2 {
+        float: left;
+    }
 
-h1 {
-    color: blue;
-}
-
-h2 {
-    background-color: #ddd;
-    padding: 10px;
-}
 
 div {
-    max-width: 960px;
+    width: 100%;
     background-color: #ccc;
     margin: 20px auto 0;
-    padding: 10px;
-}
-
-ul li img {
-    width: 500px;
-}
-
-table thead tr {
-    background-color: red;
-}
-
-table tbody tr:nth-child(odd) {
-    background-color: navy;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: red;
-}
-
-img[usemap] {
-    width: 500px;
 }
 
 footer {
     background-color: #777;
-    padding: 10px;
     text-align: center;
     color: white;
 }
@@ -72,35 +41,71 @@ body {
     min-height: 100vh;
 }
 
-header, nav, div, footer {
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.gallery_nav {
+    transform: translateY(-50%);
+}
+
+.gallery__pager-current,
+.gallery__pager-total {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.gallery {
+    position: relative;
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery__slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.gallery__slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.gallery__slide {
+    min-width: calc(33.33% - 20px);
+    margin-right: 10px;
     box-sizing: border-box;
 }
 
-
-div {
-    display: flex;
-    flex-direction: column;
+.photo_space {
+    display: none;
 }
 
-@media (min-width: 768px) {
-    nav.menu p {
-        flex-direction: row;
-        justify-content: center;
+.gallery_nav {
+    margin-top: 20px;
+}
+
+.photo_space.active {
+    display: block;
+}
+
+.photo_space {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .gallery__slide {
+        min-width: calc(100% - 20px);
     }
 
-    div {
-        border-image-outset:initial 0;
-        max-width: 960px;
-        margin: 20px auto;
-        padding: 10px;
-    }
-
-    ul {
-        order: 1;
-    }
-
-    figure.table-container {
-        order: 2;
+    img {
+        width: 250px;
+        height: 250px;
     }
 }
